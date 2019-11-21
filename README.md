@@ -1,2 +1,2 @@
 # MaximaPython
- Api for running Maxima withing Python
+Module for running Maxima withing Python.
