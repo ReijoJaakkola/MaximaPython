@@ -56,6 +56,11 @@ def runMaximaCode(maximaCodeLines):
 		# Run the code.
 		output = runMaxima(maximaCode)
 
+		# Since we are running maxima.bat, the output obtained from runMaxima
+		# contains plenty of extra stuff that we have to get rid off. This is very
+		# dubious thing to do and I am trying to find another way to access maxima.
+		# But for now filtering it is.
+
 		# Start filtering by removing all lines without the substring (%o, and also
 		# all the lines that contain :=. We also remove here
 		# the first outputline, since this contains 'false' from the display2d:false command
