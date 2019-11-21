@@ -4,8 +4,15 @@ import subprocess
 # Use runMaximaCode or runMaximaFile, as they are intended to be the main
 # API. Their output is a list of strings that represent every output
 # of the maxima program (only the expressions).
+#
+# In order to make sure that runMaxima returns sensible answers,
+# append with $ those lines for which you don't want the result.
+# Also currently RunMaxima does not take into account the possibility
+# that an error that is only printed to the command line occurs.
+# For example such an error occurs in case of syntax error.
 
-cmd = ['C:/maxima-5.43.0/bin/maxima.bat']
+# TODO: Method for finding the maxima.bat
+cmd = []
 
 # Runs a maxima code, and returns the output,
 # if no error occurs.
@@ -15,9 +22,9 @@ cmd = ['C:/maxima-5.43.0/bin/maxima.bat']
 # return                        List containing all the lines from the output.
 def runMaxima(maximaCode):
 	try:
-		# TODO: What is a good buffer size?
-		# Start the maxima as a subprocess.
-		process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		# Start the maxima as a subprocess. Giving -1 as an argument we use the systems
+		# default buffer size.
+		process = subprocess.Popen(cmd,-1, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		# Run the maxima code. Note that communicate requires the input as bytes.
 		output = process.communicate(maximaCode.encode())
 		# Check whether there are any errors written in stderr.
@@ -44,9 +51,8 @@ def runMaximaCode(maximaCodeLines):
 	try:
 		# Convert the lines into a single string. Note that we add ourselves the first
 		# maxima command display2d:false, which causes the lines to be written on a single
-		# line. This makes filtering a lot easier, but it also causes us the trouble of
-		# removing the first line of filtered output.
-		maximaCode = 'display2d:false;\r'
+		# line. This makes filtering a lot easier (maybe even possible).
+		maximaCode = 'display2d:false$\r'
 		for i in range(len(maximaCodeLines)):
 			maximaCode += maximaCodeLines[i]
 			if not i == len(maximaCodeLines) - 1:
@@ -61,11 +67,9 @@ def runMaximaCode(maximaCodeLines):
 		# dubious thing to do and I am trying to find another way to access maxima.
 		# But for now filtering it is.
 
-		# Start filtering by removing all lines without the substring (%o, and also
-		# all the lines that contain :=. We also remove here
-		# the first outputline, since this contains 'false' from the display2d:false command
-		# that we added previously.
-		outputLines = [line for line in output if '(%o' in line and not ':=' in line][1:]
+		# Start filtering by removing all lines without the substring (%o, since
+		# those lines are output.
+		outputLines = [line for line in output if '(%o' in line]
 		# Then remove remove the prefix which is of the form '(%o',
 		# along with additional spaces and \r.
 		for i in range(len(outputLines)):
