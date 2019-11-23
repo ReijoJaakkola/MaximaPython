@@ -12,7 +12,7 @@ import subprocess
 # For example such an error occurs in case of syntax error.
 
 # TODO: Method for finding the maxima.bat
-cmd = []
+cmd = ['C:\\maxima-5.43.0\\bin\\maxima.bat']
 
 # Runs a maxima code, and returns the output,
 # if no error occurs.
@@ -24,7 +24,7 @@ def runMaxima(maximaCode):
 	try:
 		# Start the maxima as a subprocess. Giving -1 as an argument we use the systems
 		# default buffer size.
-		process = subprocess.Popen(cmd,-1, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		process = subprocess.Popen(cmd, -1, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		# Run the maxima code. Note that communicate requires the input as bytes.
 		output = process.communicate(maximaCode.encode())
 		# Check whether there are any errors written in stderr.
@@ -52,12 +52,12 @@ def runMaximaCode(maximaCodeLines):
 		# Convert the lines into a single string. Note that we add ourselves the first
 		# maxima command display2d:false, which causes the lines to be written on a single
 		# line. This makes filtering a lot easier (maybe even possible).
-		maximaCode = 'display2d:false$\r'
+		maximaCode = 'display2d:false$'
 		for i in range(len(maximaCodeLines)):
 			maximaCode += maximaCodeLines[i]
-			if not i == len(maximaCodeLines) - 1:
-				# Add \r at the end of each line, except the last line.
-				maximaCode += '\r'
+		# To quit the maxima, append a quit command at it.
+		maximaCode += 'quit()$'
+		print(maximaCode)
 
 		# Run the code.
 		output = runMaxima(maximaCode)
