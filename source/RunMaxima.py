@@ -55,9 +55,6 @@ def runMaximaCode(maximaCodeLines):
 		maximaCode = 'display2d:false$'
 		for i in range(len(maximaCodeLines)):
 			maximaCode += maximaCodeLines[i]
-		# To quit the maxima, append a quit command at it.
-		maximaCode += 'quit()$'
-		print(maximaCode)
 
 		# Run the code.
 		output = runMaxima(maximaCode)
