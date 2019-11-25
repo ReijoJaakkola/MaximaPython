@@ -3883,3 +3883,5 @@ maxima-5.43.0/tests/wester_problems/test_vector_analysis.mac
 maxima-5.43.0/tests/wester_problems/test_zero_equivalence.mac
 maxima-5.43.0/tests/wester_problems/wester-gpl-permission-message.txt
 maxima-5.43.0/xmaxima-local.in
+source/__pycache__/EquationSolver.cpython-38.pyc
+source/__pycache__/Simplify.cpython-38.pyc
