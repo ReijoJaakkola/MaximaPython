@@ -16,7 +16,7 @@ maximaCode.append('deduction:["OL(A&B)","KE1A"]$')
 maximaCode.append('inferenceVerifier(["(A&B)"],[],deduction);')
 
 # What the output is expected to be.
-expectedOutput = [True, True, True, True]
+expectedOutput = [0, 0, 0, 0]
 
 print(f'Output: {RunMaxima.runMaximaCode(maximaCode)}\n')
 print(f'Expected output: {expectedOutput}\n')
