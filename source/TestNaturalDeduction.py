@@ -1,7 +1,8 @@
 import RunMaxima
 
 # Create the input strings.
-maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+# maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 
 maximaCode.append('deduction:["OLA","DT1(A|B)"]$')
 maximaCode.append('inferenceVerifier(["A"],[],deduction);')
@@ -15,8 +16,11 @@ maximaCode.append('inferenceVerifier(["A","B"],[],deduction);')
 maximaCode.append('deduction:["OL(A&B)","KE1A"]$')
 maximaCode.append('inferenceVerifier(["(A&B)"],[],deduction);')
 
+maximaCode.append('deduction:["OL(A|A)","<AOA>","DE1A"]$')
+maximaCode.append('inferenceVerifier(["(A|A)"],[],deduction);')
+
 # What the output is expected to be.
-expectedOutput = [0, 0, 0, 0]
+expectedOutput = [0, 0, 0, 0, 0]
 
 print(f'Output: {RunMaxima.runMaximaCode(maximaCode)}\n')
 print(f'Expected output: {expectedOutput}\n')
