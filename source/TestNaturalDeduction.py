@@ -59,14 +59,24 @@ maximaCode.append('inferenceVerifier(1,["(P|AxR)"],[],deduction);')
 maximaCode.append('deduction:["OLR","ET1ExR"]$')
 maximaCode.append('inferenceVerifier(1,["R"],[],deduction);')
 
-#maximaCode.append('FREEVARIABLES:[["R",{"y"}]]$')
+maximaCode.append('FREEVARIABLES:[["R",{"x","y"}]]$')
 
-#maximaCode.append('deduction:["OLExEyR","<AOEyR","<AOR","ET3ExR","ET4EyExR>","EEEyExR>","EEEyExR"]$')
-#maximaCode.append('inferenceVerifier(1,["ExEyR"],[],deduction);')
+maximaCode.append('deduction:["OLExEyR","<AOEyR","<AOR","ET3ExR","ET4EyExR>","EEEyExR>","EEEyExR"]$')
+maximaCode.append('inferenceVerifier(1,["ExEyR"],[],deduction);')
+
+maximaCode.append('FREEVARIABLES:[["P",{"x"}],["R",{"y"}]]$')
+
+maximaCode.append('deduction:["OLAx(P&Q)","AE1(P&Q)","KE2P"]$')
+maximaCode.append('inferenceVerifier(1,["Ax(P&Q)"],[],deduction);')
+
+maximaCode.append('FREEVARIABLES:[["P",{"y"}],["R",{"x"}]]$')
+
+maximaCode.append('deduction:["OLEy(R&P)","<AO(R&P)","KE2R","KE2P","ET4EyP","KT3,5(R&EyP)>","EE(R&EyP)"]$')
+maximaCode.append('inferenceVerifier(1,["Ey(R&P)"],[],deduction);')
 
 outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nWe had 17 cases.')
+print('\nWe had 20 cases.')
 print(f'We obtained results for {len(outputRows)} cases.')
