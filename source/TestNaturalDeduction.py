@@ -1,12 +1,14 @@
 import RunMaxima
 
-# Create the input strings.
-#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
-maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
-
 ###########################################################################################################################################################################################
 #                                                               VALID DEDUCTIONS                                                                                                          #
 ###########################################################################################################################################################################################
+
+print('VALID DEDUCTIONS\n')
+
+# Create the input strings.
+#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 
 maximaCode.append('deduction:["OLA","DT1(A|B)"]$')
 maximaCode.append('inferenceVerifier(1,["A"],[],deduction);')
@@ -85,13 +87,14 @@ outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nVALID DEDUCTIONS')
-print('We had 21 cases.')
+print('\nWe had 21 cases.')
 print(f'We obtained results for {len(outputRows)} cases.\n')
 
 ###########################################################################################################################################################################################
 #                                                               INVALID DEDUCTIONS                                                                                                        #
 ###########################################################################################################################################################################################
+
+print('\nINVALID DEDUCTIONS')
 
 #maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
 maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
@@ -105,7 +108,6 @@ outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nINVALID DEDUCTIONS')
-print('We had 1 cases.')
+print('\nWe had 1 cases.')
 print(f'We obtained results for {len(outputRows)} cases.')
 print()
