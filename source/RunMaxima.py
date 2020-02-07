@@ -13,7 +13,7 @@ import subprocess
 
 # TODO: Method for finding the maxima.bat
 # cmd = ['C:\\maxima-5.43.0\\bin\\maxima.bat']
-cmd = ['C:\\Users\\rj421611\\OneDrive\\Työpöytä\\MaximaPython\\maxima-5.43.0\\src']
+cmd = ['C:\\Users\\rj421611\\Desktop\\maxima-5.42.2\\bin\\maxima.bat']
 
 # Runs a maxima code, and returns the output,
 # if no error occurs.
