@@ -1,8 +1,8 @@
 import RunMaxima
 
 # Create the input strings.
-maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
-#maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
+#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 
 maximaCode.append('deduction:["OLA","DT1(A|B)"]$')
 maximaCode.append('inferenceVerifier(1,["A"],[],deduction);')

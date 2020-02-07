@@ -51,7 +51,8 @@ for i in range(len(deduction)):
 	deductionForMaxima += '"' + deduction[i].replace(' ','') + '"'
 deductionForMaxima += ']'
 
-maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 maximaCode.append(f'FREEVARIABLES:{freevariablesForMaxima}$')
 
 maximaCode.append(f'deduction:{deductionForMaxima}$')
