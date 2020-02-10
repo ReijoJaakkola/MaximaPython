@@ -45,22 +45,22 @@ maximaCode.append('inferenceVerifier(1,["(A|!B)"],[],deduction);')
 
 maximaCode.append('FREEVARIABLES:[["R",{"y"}]]$')
 
-maximaCode.append('deduction:["OLR","AT1AxR"]$')
+maximaCode.append('deduction:["OLR","UT1UxR"]$')
 maximaCode.append('inferenceVerifier(1,["R"],[],deduction);')
 
-maximaCode.append('deduction:["OLAxR","AE1R"]$')
-maximaCode.append('inferenceVerifier(1,["AxR"],[],deduction);')
+maximaCode.append('deduction:["OLUxR","UE1R"]$')
+maximaCode.append('inferenceVerifier(1,["UxR"],[],deduction);')
 
 maximaCode.append('FREEVARIABLES:[["P",{"y"}],["R",{"x","y"}]]$')
 
-maximaCode.append('deduction:["OLAx(P(y)->R(x,y))","OLP(y)","AE1(P(y)->R(x,y))","IE2,3R(x,y)","AT4AxR(x,y)"]$')
-maximaCode.append('inferenceVerifier(1,["Ax(P(y)->R(x,y))","P(y)"],[],deduction);')
+maximaCode.append('deduction:["OLUx(P(y)->R(x,y))","OLP(y)","UE1(P(y)->R(x,y))","IE2,3R(x,y)","UT4UxR(x,y)"]$')
+maximaCode.append('inferenceVerifier(1,["Ux(P(y)->R(x,y))","P(y)"],[],deduction);')
 
-maximaCode.append('deduction:["OL(P(y)&AxR(x,y))","KE1AxR(x,y)","AE2R(x,y)","KE1P(y)","KT3,4(P(y)&R(x,y))","AT5Ax(P(y)&R(x,y))"]$')
-maximaCode.append('inferenceVerifier(1,["(P(y)&AxR(x,y))"],[],deduction);')
+maximaCode.append('deduction:["OL(P(y)&UxR(x,y))","KE1UxR(x,y)","UE2R(x,y)","KE1P(y)","KT3,4(P(y)&R(x,y))","UT5Ux(P(y)&R(x,y))"]$')
+maximaCode.append('inferenceVerifier(1,["(P(y)&UxR(x,y))"],[],deduction);')
 
-maximaCode.append('deduction:["OL(P|AxR)","<AOP","DT2(P|R)>","<AOAxR","AE4R","DT5(P|R)>","DE1(P|R)","AT7Ax(P|R)"]$')
-maximaCode.append('inferenceVerifier(1,["(P|AxR)"],[],deduction);')
+maximaCode.append('deduction:["OL(P|UxR)","<AOP","DT2(P|R)>","<AOUxR","UE4R","DT5(P|R)>","DE1(P|R)","UT7Ux(P|R)"]$')
+maximaCode.append('inferenceVerifier(1,["(P|UxR)"],[],deduction);')
 
 maximaCode.append('deduction:["OLR","ET1ExR"]$')
 maximaCode.append('inferenceVerifier(1,["R"],[],deduction);')
@@ -72,8 +72,8 @@ maximaCode.append('inferenceVerifier(1,["ExEyR"],[],deduction);')
 
 maximaCode.append('FREEVARIABLES:[["P",{"x"}],["R",{"y"}]]$')
 
-maximaCode.append('deduction:["OLAx(P&Q)","AE1(P&Q)","KE2P"]$')
-maximaCode.append('inferenceVerifier(1,["Ax(P&Q)"],[],deduction);')
+maximaCode.append('deduction:["OLUx(P&Q)","UE1(P&Q)","KE2P"]$')
+maximaCode.append('inferenceVerifier(1,["Ux(P&Q)"],[],deduction);')
 
 maximaCode.append('FREEVARIABLES:[["P",{"y"}],["R",{"x"}]]$')
 
@@ -101,8 +101,8 @@ maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac"
 
 maximaCode.append('FREEVARIABLES:[["R",{"x","y"}]]$')
 
-maximaCode.append('deduction:["OLAxEyR","AE1EyR","<AOR","AT3AxR","ET4EyAxR>","ETEyAxR"]$')
-maximaCode.append('inferenceVerifier(1,["AxEyR"],[],deduction);')
+maximaCode.append('deduction:["OLUxEyR","UE1EyR","<AOR","UT3UxR","ET4EyUxR>","ETEyUxR"]$')
+maximaCode.append('inferenceVerifier(1,["UxEyR"],[],deduction);')
 
 outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
