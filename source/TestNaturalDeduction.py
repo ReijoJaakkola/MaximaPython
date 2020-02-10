@@ -94,7 +94,7 @@ print(f'We obtained results for {len(outputRows)} cases.\n')
 #                                                               INVALID DEDUCTIONS                                                                                                        #
 ###########################################################################################################################################################################################
 
-print('\nINVALID DEDUCTIONS')
+print('\nINVALID DEDUCTIONS\n')
 
 #maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
 maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']

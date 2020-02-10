@@ -24,7 +24,6 @@ for i in range(len(vocabulary)):
 	text += '}]'
 	freevariablesForMaxima += text
 freevariablesForMaxima += ']'
-print(freevariablesForMaxima)
 
 line = str(input('Enter assumptions: '))
 assumptions = line.split()
