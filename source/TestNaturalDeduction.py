@@ -83,11 +83,17 @@ maximaCode.append('inferenceVerifier(1,["Ey(R&P)"],[],deduction);')
 maximaCode.append('deduction:["OL(A&!A)","<AO!B","RE(A&!A)>","NT!!B","NE4B"]$')
 maximaCode.append('inferenceVerifier(1,["(A&!A)"],[],deduction);')
 
+maximaCode.append('deduction:["OL(A->B)","OL(B->A)","YT(A<->B)"]$')
+maximaCode.append('inferenceVerifier(1,["(A->B)","(B->A)"],[],deduction);')
+
+maximaCode.append('deduction:["OLA","OL(A<->B)","YE1,2B"]$')
+maximaCode.append('inferenceVerifier(1,["A","(A<->B)"],[],deduction);')
+
 outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nWe had 21 cases.')
+print('\nWe had 23 cases.')
 print(f'We obtained results for {len(outputRows)} cases.\n')
 
 ###########################################################################################################################################################################################
