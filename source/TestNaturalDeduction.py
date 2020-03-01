@@ -7,8 +7,8 @@ import RunMaxima
 print('VALID DEDUCTIONS\n')
 
 # Create the input strings.
-#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
-maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+#maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 
 maximaCode.append('deduction:["OLA","DT1(A|B)"]$')
 maximaCode.append('inferenceVerifier(1,["A"],[],deduction);')
@@ -102,10 +102,13 @@ print(f'We obtained results for {len(outputRows)} cases.\n')
 
 print('\nINVALID DEDUCTIONS\n')
 
-#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
-maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+#maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 
 maximaCode.append('FREEVARIABLES:[["R",{"x","y"}]]$')
+
+maximaCode.append('deduction:["OLB"]$')
+maximaCode.append('inferenceVerifier(1,["A"],[],deduction);')
 
 maximaCode.append('deduction:["OLUxEyR","UE1EyR","<AOR","UT3UxR","ET4EyUxR>","ETEyUxR"]$')
 maximaCode.append('inferenceVerifier(1,["UxEyR"],[],deduction);')
@@ -114,6 +117,6 @@ outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nWe had 1 cases.')
+print('\nWe had 2 cases.')
 print(f'We obtained results for {len(outputRows)} cases.')
 print()
