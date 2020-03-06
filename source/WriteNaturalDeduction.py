@@ -50,8 +50,8 @@ for i in range(len(deduction)):
 	deductionForMaxima += '"' + deduction[i].replace(' ','') + '"'
 deductionForMaxima += ']'
 
-#maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
-maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
+maximaCode = ['load("C:/Users/reijo/OneDrive/STACK-MAXIMA-FO/FO_ND.mac")$']
+#maximaCode = ['load("C:/Users/rj421611/Desktop/GitHub/STACK-MAXIMA-FO/FO_ND.mac")$']
 maximaCode.append(f'FREEVARIABLES:{freevariablesForMaxima}$')
 
 maximaCode.append(f'deduction:{deductionForMaxima}$')
@@ -64,6 +64,11 @@ for output in outputRows:
 	if len(output) != 3:
 		print('Maxima error occured.')
 	elif output[1] == '0':
-		print('Proof is correct!')
+		print('Proof is correct! You can find it in the file "proof.txt"')
+		for i in range(len(deduction)):
+			deduction[i] = deduction[i] + '\n'
+		file = open("proof.txt", "w") 
+		file.writelines(deduction) 
+		file.close()
 	else:
 		print(f'There was a mistake in the line {output[2][:len(output[2])-1]}')

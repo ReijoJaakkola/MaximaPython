@@ -89,11 +89,15 @@ maximaCode.append('inferenceVerifier(1,["(A->B)","(B->A)"],[],deduction);')
 maximaCode.append('deduction:["OLA","OL(A<->B)","YE1,2B"]$')
 maximaCode.append('inferenceVerifier(1,["A","(A<->B)"],[],deduction);')
 
+maximaCode.append('FREEVARIABLES:[["A",{"x"}],["B",{"x"}]]$')
+maximaCode.append('deduction:["OLExA","<AOA","DT2(A|B)","ET3Ex(A|B)>","EEEx(A|B)"]$')
+maximaCode.append('inferenceVerifier(1,["ExA"],[],deduction);')
+
 outputRows = RunMaxima.runMaximaCode(maximaCode)
 for output in outputRows:
 	print(output)
 
-print('\nWe had 23 cases.')
+print('\nWe had 24 cases.')
 print(f'We obtained results for {len(outputRows)} cases.\n')
 
 ###########################################################################################################################################################################################
