@@ -12,7 +12,8 @@ import subprocess
 # For example such an error occurs in case of syntax error.
 
 # TODO: Method for finding the maxima.bat
-cmd = ['C:\\maxima-5.43.0\\bin\\maxima.bat']
+cmd = ['C:\\Users\reijo\\Desktop\\MaximaPython\\maxima-5.42.2\\bin\\maxima.bat']
+#cmd = ['C:\\maxima-5.43.0\\bin\\maxima.bat']
 #cmd = ['C:\\Users\\rj421611\\Desktop\\maxima-5.42.2\\bin\\maxima.bat']
 
 # Runs a maxima code, and returns the output,
