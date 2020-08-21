@@ -68,7 +68,7 @@ for output in outputRows:
 		for i in range(len(deduction)):
 			deduction[i] = deduction[i] + '\n'
 		file = open("proof.txt", "w") 
-		file.writelines(deduction) 
+		file.writelines(deductionForMaxima)
 		file.close()
 	else:
 		print(f'There was a mistake in the line {output[2][:len(output[2])-1]}')
